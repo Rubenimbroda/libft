@@ -1,40 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 17:03:18 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/09/30 16:41:30 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/09/30 17:28:07 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/09/30 19:08:41 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= '0' && c < '9')
+	int	i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		return (1);
+		if (s[i] == c)
+		{
+			return ((char *)&s[i]);
+		}
+		i--;
 	}
-	else if ((c >= 'A' && c < 'Z') || (c >= 'a' && c <= 'z'))
+	return (NULL);
+}
+/* int main()
+{
+	const char str[] = "me y llamo ruben";
+	char c = 'z';
+	char *ptachar;
+
+	ptachar = ft_strrchr(str, c);
+
+	if (ptachar != NULL)
 	{
-		return (1);
+		printf("caracter encontrado");
 	}
 	else
 	{
-		return (0);
+		printf("caracter no encontrado");
 	}
-}
-
-/*  int main () {
-	char c = 'F';
-	
-	if (ft_isalnum(c) != 0){
-		printf ("es numero o letra");
-	}
-	else {
-		printf ("no es numero o letra");
-	}
-}  */
+} */

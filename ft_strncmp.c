@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 17:03:18 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/09/30 16:41:30 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/09/30 15:53:01 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/09/30 16:41:47 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	if (c >= '0' && c < '9')
+	unsigned int	i;
+
+	i = 0;
+	while (i < n && s1[i] == s2[i] && s1[i] && s2[i])
 	{
-		return (1);
+		i++;
 	}
-	else if ((c >= 'A' && c < 'Z') || (c >= 'a' && c <= 'z'))
+	if (i < n)
 	{
-		return (1);
+		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
 
-/*  int main () {
-	char c = 'F';
-	
-	if (ft_isalnum(c) != 0){
-		printf ("es numero o letra");
-	}
-	else {
-		printf ("no es numero o letra");
-	}
-}  */
+/* int main()
+{
+	char s1[] = "hola me llamo ruben";
+	char s2[] = "hola me llamo ru";
+
+	printf("resultado: %d\n", ft_strncmp(s1, s2, 17));
+} */

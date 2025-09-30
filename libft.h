@@ -6,7 +6,15 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:37:23 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/09/29 14:37:32 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/09/30 19:05:19 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT_H
+# define LIBFT_H
+
+#include <stdio.h>
+
+size_t	ft_strlen(const char str[]);
+
+#endif

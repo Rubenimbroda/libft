@@ -6,11 +6,10 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:56:42 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/09/29 17:03:43 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/09/30 16:41:16 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 int	ft_isdigit(char c)

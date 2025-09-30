@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 17:03:18 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/09/30 16:41:30 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/09/30 15:17:57 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/09/30 16:41:40 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	if (c >= '0' && c < '9')
+	unsigned int	i;
+
+	i = 0;
+	if (size > 0)
 	{
-		return (1);
+		while (src[i] && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	else if ((c >= 'A' && c < 'Z') || (c >= 'a' && c <= 'z'))
+	i = 0;
+	while (src[i] != '\0')
 	{
-		return (1);
+		i++;
 	}
-	else
-	{
-		return (0);
-	}
+	return (i);
 }
 
-/*  int main () {
-	char c = 'F';
+/* int main()
+{
+	char src[] = "me llamo ruben";
+	char dest[19];
 	
-	if (ft_isalnum(c) != 0){
-		printf ("es numero o letra");
-	}
-	else {
-		printf ("no es numero o letra");
-	}
-}  */
+	unsigned int len = ft_strlcpy(dest, src, sizeof(dest));
+
+	printf("la frase es: %s (longitud total: %u)", dest, len);
+} */

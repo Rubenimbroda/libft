@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 17:03:18 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/09/30 16:41:30 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/09/30 11:16:33 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/09/30 16:41:20 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+int	ft_isascii(int c)
 {
-	if (c >= '0' && c < '9')
-	{
-		return (1);
-	}
-	else if ((c >= 'A' && c < 'Z') || (c >= 'a' && c <= 'z'))
+	if (c >= 0 && c <= 127)
 	{
 		return (1);
 	}
@@ -28,13 +24,16 @@ int	ft_isalnum(char c)
 	}
 }
 
-/*  int main () {
-	char c = 'F';
+/* int main()
+{
+	int c = 129;
 	
-	if (ft_isalnum(c) != 0){
-		printf ("es numero o letra");
+	if (ft_isascii(c) != 0)
+	{
+		printf("es ascii");
 	}
-	else {
-		printf ("no es numero o letra");
+	else
+	{
+		printf("no es ascii");
 	}
-}  */
+} */
