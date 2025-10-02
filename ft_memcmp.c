@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 14:40:10 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/02 17:41:33 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/10/02 12:57:38 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/10/02 13:33:38 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
-	size_t			i;
+	size_t				i;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
 
+	str1 = (const unsigned char *)s1;
+	str2 = (const unsigned char *)s2;
 	i = 0;
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
 	while (i < n)
 	{
-		d[i] = s[i];
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (dest);
+	return (0);
 }
 
 /* int main()
 {
-	char src[] = "me llamo ruben";
-	char dest[20];
+	char str1[] = "ruben";
+	char str2[] = "9uben";
 
-	ft_memcpy(dest, src, 12);
-	dest[12] = '\0';
-	printf("%s\n", dest);
+	printf("%i\n", ft_memcmp(str1, str2, 1));
 } */

@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 14:40:10 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/02 17:41:33 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/10/02 17:21:51 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/10/02 18:34:34 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strdup(const char *s)
 {
-	unsigned char	*d;
-	unsigned char	*s;
-	size_t			i;
+	char	*str;
+	size_t	len;
 
-	i = 0;
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dest);
+	len = ft_strlen(s);
+	str = (char *)malloc(sizeof(char) * len + 1);
+	ft_memcpy(str, s, len);
+	return (str);
 }
 
 /* int main()
 {
-	char src[] = "me llamo ruben";
-	char dest[20];
-
-	ft_memcpy(dest, src, 12);
-	dest[12] = '\0';
-	printf("%s\n", dest);
+	char src[] = "hols que tal";
+	printf("%s\n", ft_strdup(src));
 } */
