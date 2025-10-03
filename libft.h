@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:37:23 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/02 18:23:46 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/03 14:25:34 by rubenior         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ char			ft_toupper(char c);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
+char	        *ft_strdup(const char *s);
+char            *ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
