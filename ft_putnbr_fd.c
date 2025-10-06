@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 15:17:57 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/06 17:20:53 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/10/06 13:31:17 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/10/06 14:06:14 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	if (size > 0)
+	if (n == -2147483648)
 	{
-		while (src[i] && i < size - 1)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		ft_putchar_fd('-', 1);
+		ft_putchar_fd('2', 1);
+		ft_putnbr_fd(14783648, fd);
 	}
-	i = 0;
-	while (src[i] != '\0')
+	else if (n >= 10)
 	{
-		i++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
-	return (i);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }
 
 /* int main()
 {
-	char src[] = "me llamo ruben";
-	char dest[19];
-	
-	unsigned int len = ft_strlcpy(dest, src, sizeof(dest));
-
-	printf("la frase es: %s (longitud total: %u)", dest, len);
+	ft_putnbr_fd(2147483647, 1);
 } */

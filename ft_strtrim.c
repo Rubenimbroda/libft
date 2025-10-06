@@ -1,45 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 15:17:57 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/06 17:20:53 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/10/06 12:09:24 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/10/06 12:55:55 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	i;
+	size_t	i;
+	size_t	j;
 
+	if (!s1 || !set)
+		return (0);
 	i = 0;
-	if (size > 0)
-	{
-		while (src[i] && i < size - 1)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	i = 0;
-	while (src[i] != '\0')
-	{
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	}
-	return (i);
+	j = ft_strlen(s1);
+	while (j > i && ft_strchr(set, s1[j - 1]))
+		j--;
+	return (ft_substr(s1, i, j - i));
 }
 
 /* int main()
 {
-	char src[] = "me llamo ruben";
-	char dest[19];
-	
-	unsigned int len = ft_strlcpy(dest, src, sizeof(dest));
-
-	printf("la frase es: %s (longitud total: %u)", dest, len);
+	printf("%s\n", ft_strtrim("  hola - ", " -"));
 } */

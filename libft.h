@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:37:23 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/03 14:25:34 by rubenior         ###   ########.fr       */
+/*   Updated: 2025/10/06 18:29:17 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -35,8 +36,18 @@ char			ft_tolower(char c);
 char			ft_toupper(char c);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size);
-char	        *ft_strdup(const char *s);
-char            *ft_substr(char const *s, unsigned int start, size_t len);
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size);
+char			*ft_strdup(const char *s);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strtrim(char const *s1, char const *set);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
+char			**ft_split(char const *s, char c);
+void			*ft_calloc(size_t nmemb, size_t size);
+
+
 
 #endif

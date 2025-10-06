@@ -1,45 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 15:17:57 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/06 17:20:53 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/10/06 13:24:41 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/10/06 13:29:54 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+void	ft_putendl_fd(char *s, int fd)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	if (size > 0)
+	while (s[i])
 	{
-		while (src[i] && i < size - 1)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	i = 0;
-	while (src[i] != '\0')
-	{
+		write(fd, &s[i], 1);
 		i++;
 	}
-	return (i);
+	write(fd, "\n", 1);
 }
 
 /* int main()
 {
-	char src[] = "me llamo ruben";
-	char dest[19];
-	
-	unsigned int len = ft_strlcpy(dest, src, sizeof(dest));
-
-	printf("la frase es: %s (longitud total: %u)", dest, len);
+	ft_putendl_fd("hola me llamo ruben", 1);
 } */
