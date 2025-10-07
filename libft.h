@@ -6,7 +6,7 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:37:23 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/06 18:29:17 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/07 12:23:53 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void			ft_putstr_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 char			**ft_split(char const *s, char c);
 void			*ft_calloc(size_t nmemb, size_t size);
-
-
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif

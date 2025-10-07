@@ -1,45 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 15:17:57 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/07 10:46:36 by rnuno-im         ###   ########.fr       */
+/*   Created: 2025/10/07 11:33:36 by rnuno-im          #+#    #+#             */
+/*   Updated: 2025/10/07 12:22:34 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
+	char			*result;
 
 	i = 0;
-	if (size > 0)
+	if (!f || !s)
+		return (0);
+	result = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!result)
+		return (NULL);
+	while (s[i])
 	{
-		while (src[i] && i < size - 1)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-	}
-	i = 0;
-	while (src[i] != '\0')
-	{
+		result[i] = f(i, s[i]);
 		i++;
 	}
-	return (i);
+	return (result);
+}
+/* char toasterisk(unsigned int i, char c)
+{
+	(void)i;
+	(void)c;
+	return ('*');
 }
 
-/* int main()
+int main()
 {
-	char src[] = "me llamo ruben";
-	char dest[19];
-	
-	unsigned int len = ft_strlcpy(dest, src, sizeof(dest));
+	char str[] = "hola";
+	char	*res;
 
-	printf("la frase es: %s (longitud total: %u)", dest, len);
+	res = ft_strmapi(str, toasterisk);
+
+	printf("%s\n", res);
 } */
