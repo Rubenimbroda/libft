@@ -6,13 +6,13 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:15:40 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/09/30 16:41:50 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:40:28 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_tolower(char c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{

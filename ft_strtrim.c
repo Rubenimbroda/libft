@@ -6,7 +6,7 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 12:09:24 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/06 12:55:55 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:11:31 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	j;
 
 	if (!s1 || !set)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;

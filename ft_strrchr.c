@@ -6,7 +6,7 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 17:28:07 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/09/30 19:08:41 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:39:20 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 
 	i = ft_strlen(s);
+	if (c > 255)
+		c = c % 256;
 	while (i >= 0)
 	{
 		if (s[i] == c)

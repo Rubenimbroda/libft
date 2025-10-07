@@ -6,7 +6,7 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 17:21:51 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/02 18:34:34 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:59:11 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen(s);
 	str = (char *)malloc(sizeof(char) * len + 1);
-	ft_memcpy(str, s, len);
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s, len + 1);
 	return (str);
 }
 

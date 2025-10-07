@@ -6,22 +6,17 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 16:56:42 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/09/30 16:41:16 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:22:07 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
-	if (c >= '0' && c < '9')
-	{
+	if (c >= '0' && c <= '9')
 		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
 
 /*int main () {

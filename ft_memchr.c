@@ -6,12 +6,12 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:13:24 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/02 13:25:52 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:16:27 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// busca un caracter en una string hasta el caracter numero 'n'
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t				i;

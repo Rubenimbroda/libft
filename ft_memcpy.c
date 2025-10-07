@@ -6,7 +6,7 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:40:10 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/02 17:41:33 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/07 15:20:58 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*s;
 	size_t			i;
 
+	if (!dest && !src)
+		return (NULL);
 	i = 0;
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;

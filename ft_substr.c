@@ -6,7 +6,7 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 13:18:19 by rubenior          #+#    #+#             */
-/*   Updated: 2025/10/06 11:58:39 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:15:08 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start + len > s_len)
 		len = s_len - start;
 	dest = malloc(sizeof(char) * (len + 1));
+	if (!dest)
+		return (NULL);
 	i = 0;
 	while (i < len && s[start + i])
 	{
