@@ -6,7 +6,7 @@
 #    By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 14:20:33 by rnuno-im          #+#    #+#              #
-#    Updated: 2025/10/07 12:39:17 by rnuno-im         ###   ########.fr        #
+#    Updated: 2025/10/08 15:36:32 by rnuno-im         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,9 @@ all:	$(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(OBJS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

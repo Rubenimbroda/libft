@@ -6,7 +6,7 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 12:25:34 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/01 12:56:23 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/08 10:37:21 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ int	ft_atoi(const char *nptr)
 
 /* int main()
 {
-	printf("%d\n", ft_atoi(" -  954 9"));
+	printf("%d\n", ft_atoi(" a954 9"));
 } */

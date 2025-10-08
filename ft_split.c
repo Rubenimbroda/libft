@@ -6,7 +6,7 @@
 /*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:08:22 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/10/06 17:42:56 by rnuno-im         ###   ########.fr       */
+/*   Updated: 2025/10/08 15:27:38 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	res[j] = NULL;
 	return (res);
 }
-/* void	print_split(char **split)
+/*  void	print_split(char **split)
 {
 	int i;
 	i = 0;
@@ -99,11 +99,11 @@ char	**ft_split(char const *s, char c)
 
 int main()
 {
-	char *str = "hola-mundo";
-	char **res = ft_split(str, ' ');
+	char *str = "hola\tmundo";
+	char **res = ft_split(str, '	');
 	
 	if (!res)
 		return (1);
 	print_split(res);
 	free_array(res);
-} */
+}  */
